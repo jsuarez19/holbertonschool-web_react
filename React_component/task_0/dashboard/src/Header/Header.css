@@ -1,0 +1,17 @@
+.App-header {
+  display: flex;
+  color: #e0344a;
+  align-items: center;
+  border-bottom: thick solid #e0344a;
+  width: 100%;
+  position: fixed;
+  flex-direction: row;
+}
+
+.App-header img {
+  width: 144px;
+}
+
+.App-header h1 {
+  margin: 0;
+}
