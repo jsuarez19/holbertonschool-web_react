@@ -34,21 +34,20 @@ class Teacher implements TeacherInterface {
   }
 }
 
-function createEmployee(salary: (string | number)): Teacher | Director {
+export function createEmployee(salary: (string | number)): Teacher | Director {
   if (typeof salary === 'number' && salary < 500) {
     return new Teacher();
   } else { return new Director(); }
 }
 
-function isDirector(employee: (Teacher | Director)){
+export function isDirector(employee: (Teacher | Director)){
   // type predicate
   return employee instanceof Director;
 }
 
-function executeWork(employee: (Teacher | Director)){
+export function executeWork(employee: (Teacher | Director)){
   if (isDirector(employee)) {
     return (employee as Director).workDirectorTasks();
   }
   else {return (employee as Teacher).workTeacherTasks();}
 }
-
