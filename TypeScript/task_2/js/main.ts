@@ -51,3 +51,14 @@ export function executeWork(employee: (Teacher | Director)){
   }
   else {return (employee as Teacher).workTeacherTasks();}
 }
+
+type Subjects = 'Math' | 'History';
+
+export function teachClass(todayClass: Subjects): string {
+  if (todayClass === 'Math') {
+    return 'Teaching Math';
+  }  
+  if (todayClass === 'History') {
+    return 'Teaching History'
+  }
+}
