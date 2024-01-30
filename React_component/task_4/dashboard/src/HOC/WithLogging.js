@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 
 function WithLogging(WrappedComponent) {
   class WithLoggingComponent extends Component {
+    constructor(props) {
+      super(props);
+    }
+
     componentDidMount() {
       console.log(`Component ${this.getComponentName()} is mounted`);
     }
@@ -9,9 +13,13 @@ function WithLogging(WrappedComponent) {
     componentWillUnmount() {
       console.log(`Component ${this.getComponentName()} is going to unmount`);
     }
+
+    render() {
+      return <WithLoggingComponent {...this.props} />
+    }
     
     getComponentName() {
-      return WrappedComponent.displayName || 'Component';
+      return WrappedComponent.displayName || WrappedComponent.name || 'Component';
     }
   };
 
